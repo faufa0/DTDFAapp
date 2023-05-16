@@ -1,0 +1,49 @@
+mat-card {
+  margin: 20px 50px 0px;
+  padding: 20px 10px 0px;
+}
+mat-form-field {
+  width: 100%;
+  font-size: 12px;
+}
+.container{
+  padding-top: 30px ;
+}
+.tabcontent{
+    margin: 10px 0px 0px;
+    padding: 10px 10px 0px;
+}
+.generalroutingrow {
+  display: flex;
+  gap: 5px;
+  padding: 10px 20px 10px;
+}
+.textdp {
+  max-width: 22%;
+}
+
+.numinput {
+  max-width: 8%;
+
+  input {
+    text-align: center;
+  }
+}
+.comrottotal{
+  display: flex;
+  gap: 20px;
+  padding: 10px 50px 10px;
+  
+}
+.totalcharges{
+ width: 40%;
+ padding: 10px 20px 10px;
+  
+}
+.fullbutton{
+  width: 100%;
+}
+.deletebtn{
+  display: flex;
+  gap: 5px;
+}

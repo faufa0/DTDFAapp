@@ -1,0 +1,258 @@
+<form class="container" [formGroup]="Qouteform" (ngSubmit)="saveQoute()">
+    <div class="generalroutingrow">
+        <h3><b>{{pagetitle}}</b></h3>
+    </div>
+    <mat-tab-group dynamicHeight="true">
+
+        <mat-tab label="General Information">
+            <div class="tabcontent">
+                <div class="generalroutingrow">
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Qoute Number</mat-label>
+                        <input matInput formControlName="qQouteNumber">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Payment Terms</mat-label>
+                        <input matInput formControlName="qPaymentTerms">
+                    </mat-form-field>
+                </div>
+                <div class="generalroutingrow">
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Date Created</mat-label>
+                        <input matInput formControlName="qDateCreated">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Expiration Date</mat-label>
+                        <input matInput formControlName="qExpirationDate">
+                    </mat-form-field>
+                </div>
+                <div class="generalroutingrow">
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Request Date</mat-label>
+                        <input matInput formControlName="qRequestDate">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Source</mat-label>
+                        <input matInput formControlName="qSource">
+                    </mat-form-field>
+                </div>
+                <div class="generalroutingrow">
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Response Days</mat-label>
+                        <input matInput formControlName="qResponseDays">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Empoloyee</mat-label>
+                        <input matInput formControlName="qEmpoloyee">
+                    </mat-form-field>
+                </div>
+                <div class="generalroutingrow">
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Requrements</mat-label>
+                        <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="5"
+                            cdkAutosizeMaxRows="5" formControlName="qRequrements"></textarea>
+                    </mat-form-field>
+                </div>
+
+                <div class="generalroutingrow">
+                    <button mat-stroked-button type="button" class="fullbutton" color="basic">Cancel</button>
+                    <button mat-raised-button type="submit" class="fullbutton" color="primary">Save</button>
+                </div>
+            </div>
+        </mat-tab>
+        <mat-tab label="Handling and Routing">
+            <div class="tabcontent">
+                <div class="generalroutingrow">
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Mode of Transportaion</mat-label>
+                        <input matInput formControlName="qModeofTransportaion">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Incoterms</mat-label>
+                        <input matInput formControlName="qIncoterms">
+                    </mat-form-field>
+                </div>
+                <div class="generalroutingrow">
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Frequency</mat-label>
+                        <input matInput formControlName="qFrequency">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Service</mat-label>
+                        <input matInput formControlName="qService">
+                    </mat-form-field>
+                </div>
+                <div class="generalroutingrow">
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Origin Port</mat-label>
+                        <input matInput formControlName="qOriginPort">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Destination Port</mat-label>
+                        <input matInput formControlName="qDestinationPort">
+                    </mat-form-field>
+                </div>
+                <div class="generalroutingrow">
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Shipper</mat-label>
+                        <input matInput formControlName="qShipper">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Consignee</mat-label>
+                        <input matInput formControlName="qConsignee">
+                    </mat-form-field>
+                </div>
+                <div class="generalroutingrow">
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Shipper Address</mat-label>
+                        <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="3"
+                            cdkAutosizeMaxRows="3" formControlName="qShipperAddress"></textarea>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Consignee Address</mat-label>
+                        <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="3"
+                            cdkAutosizeMaxRows="3" formControlName="qConsigneeAddress"></textarea>
+                    </mat-form-field>
+                </div>
+                <div class="generalroutingrow">
+                    <button mat-stroked-button type="button" class="fullbutton" color="basic">Cancel</button>
+                    <button mat-raised-button type="submit" class="fullbutton" color="primary">Save</button>
+                </div>
+
+            </div>
+        </mat-tab>
+        <mat-tab label="Charges">
+            <div class="tabcontent">
+                <div class="generalroutingrow">
+                    <a mat-raised-button color="primary">Add Commodities</a>
+                </div>
+                <div class="generalroutingrow" formArrayName="qICommodities">
+                    <mat-form-field class="numinput" appearance="outline" floatLabel="always">
+                        <mat-label>Pieces</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                    <mat-form-field class="textdp" appearance="outline" floatLabel="always">
+                        <mat-label>Package</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                    <mat-form-field class="textdp" appearance="outline" floatLabel="always">
+                        <mat-label>Discription</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                    <mat-form-field class="numinput" appearance="outline" floatLabel="always">
+                        <mat-label>Wgt</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                    <mat-form-field class="numinput" appearance="outline" floatLabel="always">
+                        <mat-label>Lb/kg</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                    <mat-form-field class="numinput" appearance="outline" floatLabel="always">
+                        <mat-label>Length</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                    <mat-form-field class="numinput" appearance="outline" floatLabel="always">
+                        <mat-label>Width</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                    <mat-form-field class="numinput" appearance="outline" floatLabel="always">
+                        <mat-label>Height</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                    <mat-form-field class="numinput" appearance="outline" floatLabel="always">
+                        <mat-label>In/Cm</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                    <button mat-stroked-button color="warn">Delete</button>
+                </div>
+                <div class="comrottotal">
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Actual Weigth (Lbs)</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Volume Weight (Lbs)</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Cubic (Ft)</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Chargable Weight (Lbs)</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+                <div class="comrottotal">
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Actual Weigth (Kg)</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Volume Weight (Kg)</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Cubic (Mtr)</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Chargable Weight (Kg)</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="tabcontent">
+                <div class="generalroutingrow">
+                    <a mat-raised-button color="primary">Add Service</a>
+                </div>
+                <div class="generalroutingrow" formArrayName="qIcharges">
+
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Charges</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Service</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+
+                    <a mat-stroked-button color="warn">Delete</a>
+
+                </div>
+                <div class="totalcharges">
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Total</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+
+            </div>
+            <div class="generalroutingrow">
+                <button mat-stroked-button type="button" class="fullbutton" color="basic">Cancel</button>
+                <button mat-raised-button type="submit" class="fullbutton" color="primary">Save</button>
+            </div>
+
+        </mat-tab>
+        <mat-tab label="Notes">
+            <div class="tabcontent">
+                <div class="generalroutingrow">
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Internal Notes</mat-label>
+                        <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="20"
+                            cdkAutosizeMaxRows="20" formControlName="qInternalNotes"></textarea>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>External Notes</mat-label>
+                        <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="20"
+                            cdkAutosizeMaxRows="20" formControlName="qExternalNotes"></textarea>
+                    </mat-form-field>
+                </div>
+                <div class="generalroutingrow">
+                    <button mat-stroked-button type="button" class="fullbutton" color="basic">Cancel</button>
+                    <button mat-raised-button type="submit" class="fullbutton" color="primary">Save</button>
+                </div>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</form>

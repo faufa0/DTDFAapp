@@ -1,0 +1,907 @@
+{
+  "clientDb": [
+    {
+      "email": "cwg email",
+      "adress": "cwg Adress1",
+      "name": "CARPENTERS WORKSHOP GALLERY",
+      "id": 1
+    },
+    {
+      "email": "mfs email",
+      "adress": "mfs Adress1",
+      "name": "MERIDIAN FREIGHT SERVICES LTD",
+      "id": 2
+    },
+    {
+      "email": "kgc email",
+      "adress": "kgc Adress1",
+      "name": "KAYNE GRIFFIN CORPORATION",
+      "id": 3
+    },
+    {
+      "email": "bn email",
+      "adress": "bn Adress1",
+      "name": "BONHAMS NY",
+      "id": 4
+    },
+    {
+      "email": "cfa email",
+      "adress": "cfa Adress1",
+      "name": "CROWN FINE ART- MIDDLE EAST",
+      "id": 5
+    },
+    {
+      "email": "c email",
+      "adress": "c Adress1",
+      "name": "CHRISTIE'S",
+      "id": 6
+    },
+    {
+      "email": "AWT email",
+      "adress": "AWT Adress1",
+      "name": "ARTS WANTED LIMITED",
+      "id": 7
+    }
+
+  ],
+  "employeeDb": [
+    {
+      "name": "Mark Boyea",
+      "id": 1
+    },
+    {
+      "name": "Lorraine Legisniana",
+      "id": 2
+    },
+    {
+      "name": "David Bautista",
+      "id": 3
+    },
+    {
+      "name": "Azalie Cartas",
+      "id": 4
+    },
+    {
+      "name": "Vince Serrano",
+      "id": 5
+    },
+    {
+      "name": "Gladys Aguirre",
+      "id": 6
+    },
+    {
+      "name": "Adrienne Bishop",
+      "id": 7
+    }
+  ],
+  "portDb": [
+    {
+      "name": "JFK",
+      "id": 1
+    },
+    {
+      "name": "EWR",
+      "id": 2
+    },
+    {
+      "name": "MIA",
+      "id": 3
+    },
+    {
+      "name": "LAX",
+      "id": 4
+    },
+    {
+      "name": "BOS",
+      "id": 5
+    },
+    {
+      "name": "DEN",
+      "id": 6
+    },
+    {
+      "name": "LAS",
+      "id": 7
+    }
+  ],
+  "chargesDb": [
+    {
+      "service": "2 Man Delievery",
+      "charges": 100,
+      "function": "Domestic",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "function": "Domestic",
+      "service": "Installation",
+      "charges": 275
+    },
+    {
+      "id": 3,
+      "function": "Import",
+      "service": "US Custom Fee",
+      "charges": 275
+    },
+    {
+      "id": 4,
+      "function": "Import",
+      "service": "Freight Inspection",
+      "charges": 275
+    },
+    {
+      "id": 5,
+      "function": "Export",
+      "service": "Carnet Hand",
+      "charges": 100
+    },
+    {
+      "id": 6,
+      "function": "Export",
+      "service": "Airline Security",
+      "charges": 100
+    },
+    {
+      "id": 7,
+      "function": "Warehouse",
+      "service": "Packing Wrapping",
+      "charges": 65
+    },
+    {
+      "id": 8,
+      "function": "Warehouse",
+      "service": "Loading",
+      "charges": 325
+    }
+  ],
+  "commoditiesDb": [
+    {
+      "id": 1,
+      "name": "Artworks"
+    },
+    {
+      "id": 2,
+      "name": "Exhibition Goods"
+    },
+    {
+      "id": 3,
+      "name": "Paintings"
+    },
+    {
+      "id": 4,
+      "name": "Enginie Parts"
+    },
+    {
+      "id": 5,
+      "name": "Furnitures"
+    }
+  ],
+  "qouteDb": [
+    {
+      "qQouteNumber": "QN001",
+      "qPaymentTerms": "7 Days",
+      "qDateCreated": "2023-05-09T16:00:00.000Z",
+      "qExpirationDate": "7 days",
+      "qRequestDate": "2023-05-09T16:00:00.000Z",
+      "qSource": "Social Media",
+      "qResponseDays": "1",
+      "qEmpoloyee": "mark",
+      "qModeofTransportaion": "International Air",
+      "qIncoterms": "inccterms1",
+      "qFrequency": "Daily",
+      "qService": "Export",
+      "qOriginPort": "test",
+      "qDestinationPort": "tes",
+      "qShipper": "tes",
+      "qShipperAddress": "ttss",
+      "qConsignee": "tes",
+      "qConsigneeAddress": "tess",
+      "qBookingNotes": "",
+      "qExternalNotes": "",
+      "qICommodities": [
+        {
+          "qPackage": "Artworks",
+          "qDescription": "Exhibition Goods",
+          "qMetricoption": 1,
+          "qLength": 123,
+          "qWidth": 12,
+          "qHeight": 12,
+          "qMetricoption2": 2.205,
+          "qWeigth": 12,
+          "qPieces": 12,
+          "cubicIn": "212544",
+          "qVWeigthKg": "581",
+          "qVWeigthLb": "1280",
+          "cubicFt": "123.000",
+          "cubicMet": "3.483",
+          "qAcutalweightLb": "65.306",
+          "qAcutalweightKg": "29.617"
+        },
+        {
+          "qPackage": "Paintings",
+          "qDescription": "Paintings",
+          "qMetricoption": 1,
+          "qLength": 25,
+          "qWidth": 25,
+          "qHeight": 25,
+          "qMetricoption2": 1,
+          "qWeigth": 50,
+          "qPieces": 2,
+          "cubicIn": "31250",
+          "qVWeigthKg": "85",
+          "qVWeigthLb": "188",
+          "cubicFt": "18.084",
+          "cubicMet": "0.512",
+          "qAcutalweightLb": "100.000",
+          "qAcutalweightKg": "45.351"
+        }
+      ],
+      "qTotalvolumeLbs": 1468,
+      "qTotalvolumeKg": 666,
+      "qTotalActualLbs": 165.30599999999998,
+      "qTotalActualKg": 74.968,
+      "qTotalCubicFt": 141.084,
+      "qTotalCubicMtr": 3.995,
+      "qTotalChargableWeightLbs": 1468,
+      "qTotalChargableWeightKg": 666,
+      "qIcharges": [
+        {
+          "qservice": 1,
+          "qcharges": 100
+        }
+      ],
+      "qTotalcharges": 375,
+      "id": 3
+    },
+    {
+      "qQouteNumber": "QN003",
+      "qPaymentTerms": "30 Days",
+      "qDateCreated": "2023-05-04T16:00:00.000Z",
+      "qExpirationDate": "14 days",
+      "qRequestDate": "2023-05-24T16:00:00.000Z",
+      "qSource": "Inside Sales Agent",
+      "qResponseDays": "22",
+      "qEmpoloyee": "bernard",
+      "qModeofTransportaion": "International Sea",
+      "qIncoterms": "inccterms3",
+      "qFrequency": "Monthly",
+      "qService": "Venue",
+      "qOriginPort": "tertw",
+      "qDestinationPort": "ewrw",
+      "qShipper": "werwe",
+      "qShipperAddress": "rwerwe",
+      "qConsignee": "ewr",
+      "qConsigneeAddress": "rwe",
+      "qBookingNotes": "",
+      "qExternalNotes": "",
+      "qICommodities": [
+        {
+          "qPackage": "Enginie Parts",
+          "qDescription": "Enginie Parts",
+          "qMetricoption": 1,
+          "qLength": 20,
+          "qWidth": 21,
+          "qHeight": 21,
+          "qMetricoption2": 1,
+          "qWeigth": 50,
+          "qPieces": 13,
+          "cubicIn": "114660",
+          "qVWeigthKg": "313",
+          "qVWeigthLb": "691",
+          "cubicFt": "66.354",
+          "cubicMet": "1.879",
+          "qAcutalweightLb": "650.000",
+          "qAcutalweightKg": "294.785"
+        }
+      ],
+      "qTotalvolumeLbs": 691,
+      "qTotalvolumeKg": 313,
+      "qTotalActualLbs": 650,
+      "qTotalActualKg": 294.785,
+      "qTotalCubicFt": 66.354,
+      "qTotalCubicMtr": 1.879,
+      "qTotalChargableWeightLbs": 691,
+      "qTotalChargableWeightKg": 313,
+      "qIcharges": [
+        {
+          "qservice": 2,
+          "qcharges": 275
+        }
+      ],
+      "qTotalcharges": 275,
+      "id": 6
+    },
+    {
+      "qQouteNumber": "QN004",
+      "qPaymentTerms": "30 Days",
+      "qDateCreated": "2023-05-19T16:00:00.000Z",
+      "qExpirationDate": "14 days",
+      "qRequestDate": "2023-05-11T16:00:00.000Z",
+      "qSource": "Website",
+      "qResponseDays": "4",
+      "qEmpoloyee": "nasd",
+      "qModeofTransportaion": "International Sea",
+      "qIncoterms": "inccterms2",
+      "qFrequency": "Weekly",
+      "qService": "Import",
+      "qOriginPort": "123",
+      "qDestinationPort": "3123",
+      "qShipper": "weq",
+      "qShipperAddress": "qweqw",
+      "qConsignee": "wqe",
+      "qConsigneeAddress": "wqeqw",
+      "qBookingNotes": "",
+      "qExternalNotes": "",
+      "qICommodities": [
+        {
+          "qPackage": "Enginie Parts",
+          "qDescription": "Enginie Parts",
+          "qMetricoption": 1,
+          "qLength": 41,
+          "qWidth": 51,
+          "qHeight": 41,
+          "qMetricoption2": 1,
+          "qWeigth": 141,
+          "qPieces": 11,
+          "cubicIn": "943041",
+          "qVWeigthKg": "2577",
+          "qVWeigthLb": "5681",
+          "cubicFt": "545.741",
+          "cubicMet": "15.456",
+          "qAcutalweightLb": "1551.000",
+          "qAcutalweightKg": "703.401"
+        }
+      ],
+      "qTotalvolumeLbs": 5681,
+      "qTotalvolumeKg": 2577,
+      "qTotalActualLbs": 1551,
+      "qTotalActualKg": 703.401,
+      "qTotalCubicFt": 545.741,
+      "qTotalCubicMtr": 15.456,
+      "qTotalChargableWeightLbs": 5681,
+      "qTotalChargableWeightKg": 2577,
+      "qIcharges": [
+        {
+          "qservice": 2,
+          "qcharges": 275
+        }
+      ],
+      "qTotalcharges": 0,
+      "id": 7
+    },
+    {
+      "qQouteNumber": "QN005",
+      "qPaymentTerms": "7 Days",
+      "qDateCreated": "2023-05-19T16:00:00.000Z",
+      "qExpirationDate": "30 days",
+      "qRequestDate": "2023-05-11T16:00:00.000Z",
+      "qSource": "Website",
+      "qResponseDays": "4",
+      "qEmpoloyee": "nasd",
+      "qModeofTransportaion": "International Sea",
+      "qIncoterms": "inccterms2",
+      "qFrequency": "Weekly",
+      "qService": "Import",
+      "qOriginPort": "123",
+      "qDestinationPort": "3123",
+      "qShipper": "weq",
+      "qShipperAddress": "qweqw",
+      "qConsignee": "wqe",
+      "qConsigneeAddress": "wqeqw",
+      "qBookingNotes": "",
+      "qExternalNotes": "",
+      "qICommodities": [
+        {
+          "qPackage": "Enginie Parts",
+          "qDescription": "Enginie Parts",
+          "qMetricoption": 1,
+          "qLength": 71,
+          "qWidth": 81,
+          "qHeight": 41,
+          "qMetricoption2": 1,
+          "qWeigth": 191,
+          "qPieces": 87,
+          "cubicIn": "20513817",
+          "qVWeigthKg": "56054",
+          "qVWeigthLb": "123577",
+          "cubicFt": "11871.422",
+          "cubicMet": "336.206",
+          "qAcutalweightLb": "16617.000",
+          "qAcutalweightKg": "7536.054"
+        }
+      ],
+      "qTotalvolumeLbs": 123577,
+      "qTotalvolumeKg": 56054,
+      "qTotalActualLbs": 16617,
+      "qTotalActualKg": 7536.054,
+      "qTotalCubicFt": 11871.422,
+      "qTotalCubicMtr": 336.206,
+      "qTotalChargableWeightLbs": 123577,
+      "qTotalChargableWeightKg": 56054,
+      "qIcharges": [
+        {
+          "qservice": 2,
+          "qcharges": 275
+        }
+      ],
+      "qTotalcharges": 0,
+      "id": 8
+    },
+    {
+      "qQouteNumber": "QN006",
+      "qPaymentTerms": "7 Days",
+      "qDateCreated": "2023-05-19T16:00:00.000Z",
+      "qExpirationDate": "30 days",
+      "qRequestDate": "2023-05-11T16:00:00.000Z",
+      "qSource": "Website",
+      "qResponseDays": "4",
+      "qEmpoloyee": "nasd",
+      "qModeofTransportaion": "International Sea",
+      "qIncoterms": "inccterms2",
+      "qFrequency": "Weekly",
+      "qService": "Import",
+      "qOriginPort": "123",
+      "qDestinationPort": "3123",
+      "qShipper": "weq",
+      "qShipperAddress": "qweqw",
+      "qConsignee": "wqe",
+      "qConsigneeAddress": "wqeqw",
+      "qBookingNotes": "",
+      "qExternalNotes": "",
+      "qICommodities": [
+        {
+          "qPackage": "Enginie Parts",
+          "qDescription": "Enginie Parts",
+          "qMetricoption": 1,
+          "qLength": 141,
+          "qWidth": 114,
+          "qHeight": 31,
+          "qMetricoption2": 1,
+          "qWeigth": 171,
+          "qPieces": 71,
+          "cubicIn": "35378874",
+          "qVWeigthKg": "96673",
+          "qVWeigthLb": "213126",
+          "cubicFt": "20473.885",
+          "cubicMet": "579.832",
+          "qAcutalweightLb": "12141.000",
+          "qAcutalweightKg": "5506.122"
+        }
+      ],
+      "qTotalvolumeLbs": 213126,
+      "qTotalvolumeKg": 96673,
+      "qTotalActualLbs": 12141,
+      "qTotalActualKg": 5506.122,
+      "qTotalCubicFt": 20473.885,
+      "qTotalCubicMtr": 579.832,
+      "qTotalChargableWeightLbs": 213126,
+      "qTotalChargableWeightKg": 96673,
+      "qIcharges": [
+        {
+          "qservice": 2,
+          "qcharges": 275
+        }
+      ],
+      "qTotalcharges": 0,
+      "id": 9
+    },
+    {
+      "qQouteNumber": "QN007",
+      "qPaymentTerms": "7 Days",
+      "qDateCreated": "2023-05-19T16:00:00.000Z",
+      "qExpirationDate": "30 days",
+      "qRequestDate": "2023-05-11T16:00:00.000Z",
+      "qSource": "Website",
+      "qResponseDays": "4",
+      "qEmpoloyee": "nasd",
+      "qModeofTransportaion": "International Sea",
+      "qIncoterms": "inccterms2",
+      "qFrequency": "Weekly",
+      "qService": "Import",
+      "qOriginPort": "123",
+      "qDestinationPort": "3123",
+      "qShipper": "weq",
+      "qShipperAddress": "qweqw",
+      "qConsignee": "wqe",
+      "qConsigneeAddress": "wqeqw",
+      "qBookingNotes": "",
+      "qExternalNotes": "",
+      "qICommodities": [
+        {
+          "qPackage": "Enginie Parts",
+          "qDescription": "Enginie Parts",
+          "qMetricoption": 1,
+          "qLength": 71,
+          "qWidth": 11,
+          "qHeight": 51,
+          "qMetricoption2": 1,
+          "qWeigth": 101,
+          "qPieces": 71,
+          "cubicIn": "2828001",
+          "qVWeigthKg": "7728",
+          "qVWeigthLb": "17036",
+          "cubicFt": "1636.575",
+          "cubicMet": "46.349",
+          "qAcutalweightLb": "7171.000",
+          "qAcutalweightKg": "3252.154"
+        }
+      ],
+      "qTotalvolumeLbs": 17036,
+      "qTotalvolumeKg": 7728,
+      "qTotalActualLbs": 7171,
+      "qTotalActualKg": 3252.154,
+      "qTotalCubicFt": 1636.575,
+      "qTotalCubicMtr": 46.349,
+      "qTotalChargableWeightLbs": 17036,
+      "qTotalChargableWeightKg": 7728,
+      "qIcharges": [
+        {
+          "qservice": 1,
+          "qcharges": 100
+        }
+      ],
+      "qTotalcharges": 100,
+      "id": 10
+    },
+    {
+      "qQouteNumber": "QN008",
+      "qPaymentTerms": "30 Days",
+      "qDateCreated": "2023-05-04T16:00:00.000Z",
+      "qExpirationDate": "14 days",
+      "qRequestDate": "2023-05-24T16:00:00.000Z",
+      "qSource": "Inside Sales Agent",
+      "qResponseDays": "22",
+      "qEmpoloyee": "bernard",
+      "qModeofTransportaion": "International Sea",
+      "qIncoterms": "inccterms3",
+      "qFrequency": "Monthly",
+      "qService": "Venue",
+      "qOriginPort": "tertw",
+      "qDestinationPort": "ewrw",
+      "qShipper": "werwe",
+      "qShipperAddress": "rwerwe",
+      "qConsignee": "ewr",
+      "qConsigneeAddress": "rwe",
+      "qBookingNotes": "",
+      "qExternalNotes": "",
+      "qICommodities": [
+        {
+          "qPackage": "Enginie Parts",
+          "qDescription": "Enginie Parts",
+          "qMetricoption": 1,
+          "qLength": 13,
+          "qWidth": 21,
+          "qHeight": 31,
+          "qMetricoption2": 1,
+          "qWeigth": 313,
+          "qPieces": 12,
+          "cubicIn": "101556",
+          "qVWeigthKg": "278",
+          "qVWeigthLb": "612",
+          "cubicFt": "58.771",
+          "cubicMet": "1.664",
+          "qAcutalweightLb": "3756.000",
+          "qAcutalweightKg": "1703.401"
+        }
+      ],
+      "qTotalvolumeLbs": 612,
+      "qTotalvolumeKg": 278,
+      "qTotalActualLbs": 3756,
+      "qTotalActualKg": 1703.401,
+      "qTotalCubicFt": 58.771,
+      "qTotalCubicMtr": 1.664,
+      "qTotalChargableWeightLbs": 3756,
+      "qTotalChargableWeightKg": 1703.401,
+      "qIcharges": [
+        {
+          "qservice": 4,
+          "qcharges": 275
+        }
+      ],
+      "qTotalcharges": 0,
+      "id": 11
+    },
+    {
+      "qQouteNumber": "QN009",
+      "qPaymentTerms": "7 Days",
+      "qDateCreated": "2023-05-09T16:00:00.000Z",
+      "qExpirationDate": "7 days",
+      "qRequestDate": "2023-05-09T16:00:00.000Z",
+      "qSource": "Social Media",
+      "qResponseDays": "1",
+      "qEmpoloyee": "mark",
+      "qModeofTransportaion": "International Air",
+      "qIncoterms": "inccterms1",
+      "qFrequency": "Daily",
+      "qService": "Export",
+      "qOriginPort": "test",
+      "qDestinationPort": "tes",
+      "qShipper": "tes",
+      "qShipperAddress": "ttss",
+      "qConsignee": "tes",
+      "qConsigneeAddress": "tess",
+      "qBookingNotes": "",
+      "qExternalNotes": "",
+      "qICommodities": [
+        {
+          "qPackage": "Artworks",
+          "qDescription": "Exhibition Goods",
+          "qMetricoption": "1",
+          "qLength": 123,
+          "qWidth": 12,
+          "qHeight": 12,
+          "qMetricoption2": 1,
+          "qWeigth": 12,
+          "qPieces": 12,
+          "cubicIn": "212544",
+          "qVWeigthKg": 0,
+          "qVWeigthLb": 0,
+          "cubicFt": "0.336",
+          "cubicMet": "0.010",
+          "qAcutalweightLb": 0,
+          "qAcutalweightKg": 0
+        }
+      ],
+      "qTotalvolumeLbs": 0,
+      "qTotalvolumeKg": 0,
+      "qTotalActualLbs": "0012800012806903827",
+      "qTotalActualKg": "00581005813131555",
+      "qTotalCubicFt": "000.336000.3361812.243",
+      "qTotalCubicMtr": "000.010000.01051.324",
+      "qTotalChargableWeightLbs": 0,
+      "qTotalChargableWeightKg": 0,
+      "qIcharges": [
+        {
+          "qservice": 1,
+          "qcharges": 100
+        }
+      ],
+      "qTotalcharges": 0,
+      "id": 12
+    },
+    {
+      "qQouteNumber": "QN0010",
+      "qPaymentTerms": "14 Days",
+      "qDateCreated": "2023-05-24T16:00:00.000Z",
+      "qExpirationDate": "14 days",
+      "qRequestDate": "2023-05-24T16:00:00.000Z",
+      "qSource": "Inside Sales Agent",
+      "qResponseDays": "22",
+      "qEmpoloyee": "bernard",
+      "qModeofTransportaion": "International Sea",
+      "qIncoterms": "inccterms3",
+      "qFrequency": "Monthly",
+      "qService": "Venue",
+      "qOriginPort": "tertw",
+      "qDestinationPort": "ewrw",
+      "qShipper": "werwe",
+      "qShipperAddress": "rwerwe",
+      "qConsignee": "ewr",
+      "qConsigneeAddress": "rwe",
+      "qBookingNotes": "",
+      "qExternalNotes": "",
+      "qICommodities": [
+        {
+          "qPackage": "Enginie Parts",
+          "qDescription": "Enginie Parts",
+          "qMetricoption": 1,
+          "qLength": 112,
+          "qWidth": 231,
+          "qHeight": 131,
+          "qMetricoption2": 1,
+          "qWeigth": 123,
+          "qPieces": 13,
+          "cubicIn": "44060016",
+          "qVWeigthKg": "120395",
+          "qVWeigthLb": "265422",
+          "cubicFt": "25497.694",
+          "cubicMet": "722.110",
+          "qAcutalweightLb": "1599.000",
+          "qAcutalweightKg": "725.170"
+        }
+      ],
+      "qTotalvolumeLbs": 265422,
+      "qTotalvolumeKg": 120395,
+      "qTotalActualLbs": 1599,
+      "qTotalActualKg": 725.17,
+      "qTotalCubicFt": 25497.694,
+      "qTotalCubicMtr": 722.11,
+      "qTotalChargableWeightLbs": 265422,
+      "qTotalChargableWeightKg": 120395,
+      "qIcharges": [
+        {
+          "qservice": 2,
+          "qcharges": 275
+        }
+      ],
+      "qTotalcharges": 275,
+      "id": 13
+    },
+    {
+      "qQouteNumber": "QN002",
+      "qPaymentTerms": "14 Days",
+      "qDateCreated": "2023-05-03T16:00:00.000Z",
+      "qExpirationDate": "7 days",
+      "qRequestDate": "2023-05-16T16:00:00.000Z",
+      "qSource": "Website",
+      "qResponseDays": "3",
+      "qEmpoloyee": "Mark Boyea",
+      "qModeofTransportaion": "International Sea",
+      "qIncoterms": "inccterms2",
+      "qFrequency": "Twice Monthly",
+      "qService": "Storage",
+      "qOriginPort": "EWR",
+      "qDestinationPort": "JFK",
+      "qShipper": "CARPENTERS WORKSHOP GALLERY",
+      "qShipperAddress": {
+        "adress": "cwg Adress1",
+        "name": "CARPENTERS WORKSHOP GALLERY",
+        "id": 1
+      },
+      "qConsignee": "MERIDIAN FREIGHT SERVICES LTD",
+      "qConsigneeAddress": {
+        "adress": "mfs Adress1",
+        "name": "MERIDIAN FREIGHT SERVICES LTD",
+        "id": 2
+      },
+      "qBookingNotes": "",
+      "qExternalNotes": "",
+      "qICommodities": [
+        {
+          "qPackage": "Artworks",
+          "qDescription": "Artworks",
+          "qMetricoption": 1,
+          "qLength": 48,
+          "qWidth": 12,
+          "qHeight": 48,
+          "qMetricoption2": 1,
+          "qWeigth": 100,
+          "qPieces": 1,
+          "cubicIn": "27648",
+          "qVWeigthKg": "76",
+          "qVWeigthLb": "167",
+          "cubicFt": "16.000",
+          "cubicMet": "0.453",
+          "qAcutalweightLb": "100.000",
+          "qAcutalweightKg": "45.351"
+        },
+        {
+          "qPackage": "Artworks",
+          "qDescription": "Artworks",
+          "qMetricoption": 1,
+          "qLength": 60,
+          "qWidth": 10,
+          "qHeight": 60,
+          "qMetricoption2": 1,
+          "qWeigth": 75,
+          "qPieces": 1,
+          "cubicIn": "36000",
+          "qVWeigthKg": "98",
+          "qVWeigthLb": "217",
+          "cubicFt": "20.833",
+          "cubicMet": "0.590",
+          "qAcutalweightLb": "75.000",
+          "qAcutalweightKg": "34.014"
+        },
+        {
+          "qPackage": "Artworks",
+          "qDescription": "Artworks",
+          "qMetricoption": 1,
+          "qLength": 36,
+          "qWidth": 12,
+          "qHeight": 36,
+          "qMetricoption2": 1,
+          "qWeigth": 125,
+          "qPieces": 2,
+          "cubicIn": "31104",
+          "qVWeigthKg": "85",
+          "qVWeigthLb": "187",
+          "cubicFt": "18.000",
+          "cubicMet": "0.510",
+          "qAcutalweightLb": "250.000",
+          "qAcutalweightKg": "113.379"
+        },
+        {
+          "qPackage": "Artworks",
+          "qDescription": "Artworks",
+          "qMetricoption": 1,
+          "qLength": 40,
+          "qWidth": 20,
+          "qHeight": 36,
+          "qMetricoption2": 1,
+          "qWeigth": 60,
+          "qPieces": 1,
+          "cubicIn": "28800",
+          "qVWeigthKg": "79",
+          "qVWeigthLb": "173",
+          "cubicFt": "16.667",
+          "cubicMet": "0.472",
+          "qAcutalweightLb": "60.000",
+          "qAcutalweightKg": "27.211"
+        },
+        {
+          "qPackage": "Artworks",
+          "qDescription": "Artworks",
+          "qMetricoption": 1,
+          "qLength": 60,
+          "qWidth": 10,
+          "qHeight": 60,
+          "qMetricoption2": 1,
+          "qWeigth": 75,
+          "qPieces": 1,
+          "cubicIn": "36000",
+          "qVWeigthKg": "98",
+          "qVWeigthLb": "217",
+          "cubicFt": "20.833",
+          "cubicMet": "0.590",
+          "qAcutalweightLb": "75.000",
+          "qAcutalweightKg": "34.014"
+        },
+        {
+          "qPackage": "Artworks",
+          "qDescription": "Artworks",
+          "qMetricoption": 1,
+          "qLength": 48,
+          "qWidth": 12,
+          "qHeight": 48,
+          "qMetricoption2": 1,
+          "qWeigth": 50,
+          "qPieces": 3,
+          "cubicIn": "82944",
+          "qVWeigthKg": "227",
+          "qVWeigthLb": "500",
+          "cubicFt": "48.000",
+          "cubicMet": "1.359",
+          "qAcutalweightLb": "150.000",
+          "qAcutalweightKg": "68.027"
+        },
+        {
+          "qPackage": "Artworks",
+          "qDescription": "Artworks",
+          "qMetricoption": 1,
+          "qLength": 48,
+          "qWidth": 12,
+          "qHeight": 48,
+          "qMetricoption2": 1,
+          "qWeigth": 75,
+          "qPieces": 2,
+          "cubicIn": "55296",
+          "qVWeigthKg": "151",
+          "qVWeigthLb": "333",
+          "cubicFt": "32.000",
+          "cubicMet": "0.906",
+          "qAcutalweightLb": "150.000",
+          "qAcutalweightKg": "68.027"
+        }
+      ],
+      "qTotalvolumeLbs": 1794,
+      "qTotalvolumeKg": 814,
+      "qTotalActualLbs": 860,
+      "qTotalActualKg": 390.023,
+      "qTotalCubicFt": 172.333,
+      "qTotalCubicMtr": 4.88,
+      "qTotalChargableWeightLbs": 1794,
+      "qTotalChargableWeightKg": 814,
+      "qIcharges": [
+        {
+          "qservice": 2,
+          "qcharges": 275
+        },
+        {
+          "qservice": 1,
+          "qcharges": 100
+        },
+        {
+          "qservice": 4,
+          "qcharges": 275
+        },
+        {
+          "qservice": 6,
+          "qcharges": 100
+        }
+      ],
+      "qTotalcharges": 750,
+      "id": 14
+    }
+  ]
+}
