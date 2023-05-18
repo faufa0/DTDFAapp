@@ -3,6 +3,16 @@ import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { MasterService } from '../service/master.service';
 import { Router } from '@angular/router';
 
+//--------------- metric dropdown
+interface metricsoptions {
+  value: number;
+  viewValue: string;
+}
+interface metricsoptions2 {
+  value: number;
+  viewValue: string;
+}
+
 @Component({
   selector: 'app-addedit-qoute',
   templateUrl: './addedit-qoute.component.html',
@@ -11,12 +21,15 @@ import { Router } from '@angular/router';
 export class AddeditQouteComponent implements OnInit {
   pagetitle = "Create Qoute"
 
+
+  //----------------------------------------------
   ComArry !: FormArray<any>;
   SerArry !: FormArray<any>;
 
-  Scharges !: FormGroup<any>;
-  testgroup !: FormGroup<any>;
+  Schanges !: FormGroup<any>;
+  comcharges !: FormGroup<any>;
 
+  //--------------------------- Master Variable
   masterClient: any;
 
   masterEmployee: any;
@@ -34,6 +47,25 @@ export class AddeditQouteComponent implements OnInit {
 
   ) { }
 
+  metricoption: metricsoptions[] = [
+    { value: 16.3871, viewValue: 'Cm' },
+    { value: 1, viewValue: 'In' },
+
+  ];
+  metricoption2: metricsoptions2[] = [
+    { value: 2.205, viewValue: 'Kg' },
+    { value: 1, viewValue: 'Lb' },
+
+  ];
+
+  //------dropdown options
+  paymentterms: string[] = ['7 Days', '14 Days', '30 Days']
+  ExpirationDate: string[] = ['7 days', '14 days', '30 days']
+  Source: string[] = ['Social Media', 'Website', 'Search Engine', 'Inside Sales Agent', 'Client Referral']
+  Mot: string[] = ['International Air', 'International Sea', 'Domestic Air', 'Domestic Ground']
+  Incoterm: string[] = ['Incoterms1', 'Incoterms2', 'Incoterms3']
+  Frequency: string[] = ['Daily', 'Weekly', 'Twice Monthly', 'Monthly']
+  Service: string[] = ['Export', 'Import', 'Shuttle', 'Cartage', 'Storage', 'Venue']
 
   ngOnInit(): void {
     this.getClientload();
@@ -172,7 +204,7 @@ export class AddeditQouteComponent implements OnInit {
     return this.builder.group({
 
       qserviceid: this.builder.control(''),
-      qservice: this.builder.control(''),
+      qservicename: this.builder.control(''),
       qcharges: this.builder.control(''),
 
     });
@@ -188,13 +220,13 @@ export class AddeditQouteComponent implements OnInit {
 
 
   //-----------  CHANGES
-  shipperchange() {//-----------  ERROR not getting
+  shipperchange() {
     let cnumbercouter = this.Qouteform.get('qShipperno')?.value;
 
     this.service.Getclientbyclientno(cnumbercouter).subscribe(res => {
       let cnumber: any;
       cnumber = res;
-      console.log(cnumber);     
+      console.log(cnumber);
       if (cnumber != null) {
         this.Qouteform.get("qShipperAddress")?.setValue(cnumber.adress);
         this.Qouteform.get("qShipper")?.setValue(cnumber.name);
@@ -211,7 +243,7 @@ export class AddeditQouteComponent implements OnInit {
     this.service.Getclientbyclientno(cnumbercouter).subscribe(res => {
       let cnumber: any;
       cnumber = res;
-      console.log(cnumber);     
+      console.log(cnumber);
       if (cnumber != null) {
         this.Qouteform.get("qConsigneeAddress")?.setValue(cnumber.adress);
         this.Qouteform.get("qConsignee")?.setValue(cnumber.name);
@@ -224,24 +256,130 @@ export class AddeditQouteComponent implements OnInit {
 
   servicechange(service: any) {
     this.SerArry = this.Qouteform.get("qIservice") as FormArray;
-    this.Scharges = this.SerArry.at(service) as FormGroup;
+    this.Schanges = this.SerArry.at(service) as FormGroup;
 
-    let qservice = this.Scharges.get("qserviceid")?.value;
+    let qservice = this.Schanges.get("qserviceid")?.value;
     this.service.Getservicebyid(qservice).subscribe(res => {
       let proddata: any;
       proddata = res;
-      console.log(qservice);
-      console.log(proddata);
-      console.log(proddata.charges);
+
+
       if (proddata != null) {
-        this.Scharges.get("qcharges")?.setValue(proddata.charges);
+        this.Schanges.get("qcharges")?.setValue(proddata.charges);
+        this.Schanges.get("qservicename")?.setValue(proddata.service);
+        this.chargescalculation();
       }
+
     });
   }
+  //-----------  calculations
+
+  comoditiescalculation(index: any) {
+    this.ComArry = this.Qouteform.get("qICommodities") as FormArray;
+    this.comcharges = this.ComArry.at(index) as FormGroup;
+
+    let qMetricoption = this.comcharges.get("qMetricoption")?.value;
+    let qLength = this.comcharges.get("qLength")?.value;
+    let qWidth = this.comcharges.get("qWidth")?.value;
+    let qHeight = this.comcharges.get("qHeight")?.value;
+
+    let qMetricoption2 = this.comcharges.get("qMetricoption2")?.value;
+    let qWeigth = this.comcharges.get("qWeigth")?.value;
+    let qPieces = this.comcharges.get("qPieces")?.value;
+
+    let cubicIn = qPieces * qLength * qWidth * qHeight / qMetricoption;
+
+    let qVWeigthLb = cubicIn / 166;
+    let qVWeigthKg = qVWeigthLb / 2.2046;
+    let cubicFt = cubicIn / 1728;
+    let cubicMet = cubicFt / 35.31;
+
+    let qAcutalweightLb = qPieces * qWeigth / qMetricoption2;
+    let qAcutalweightKg = qAcutalweightLb / 2.205;
+
+    this.comcharges.get("cubicIn")?.setValue(cubicIn.toFixed(0));
+    this.comcharges.get("qVWeigthLb")?.setValue(qVWeigthLb.toFixed(0));
+    this.comcharges.get("qVWeigthKg")?.setValue(qVWeigthKg.toFixed(0));
+    this.comcharges.get("cubicFt")?.setValue(cubicFt.toFixed(3));
+    this.comcharges.get("cubicMet")?.setValue(cubicMet.toFixed(3));
+
+    this.comcharges.get("qAcutalweightLb")?.setValue(qAcutalweightLb.toFixed(3));
+    this.comcharges.get("qAcutalweightKg")?.setValue(qAcutalweightKg.toFixed(3));
+
+    this.totalcalculation();
+
+  }
+  totalcalculation() {
+    const testarray = this.Qouteform.getRawValue().qICommodities;
+    let VwLb = 0;
+    let VwKg = 0;
+    let CFt = 0;
+    let CMet = 0;
+    let AwLb = 0;
+    let AwKg = 0;
+    let CwLb = 0;
+    let CwKg = 0;
+
+    testarray.forEach((x: any) => {
+
+
+      VwLb += Number(x.qVWeigthLb);
+      VwKg += Number(x.qVWeigthKg);
+
+      CFt += Number(x.cubicFt);
+      CMet += Number(x.cubicMet);
+
+      AwLb += Number(x.qAcutalweightLb);
+      AwKg += Number(x.qAcutalweightKg);
 
 
 
+    });
 
+
+    if (AwKg > VwKg) {
+      CwLb = AwLb;
+      CwKg = AwKg;
+
+    } else if (AwKg < VwKg) {
+      CwLb = VwLb;
+      CwKg = VwKg;
+
+    } else {
+      CwLb = 999999;
+      CwKg = 999999;
+    }
+
+
+    console.log(CwLb);
+    console.log(CwKg);
+
+    this.Qouteform.get("qTotalvolumeLbs")?.setValue(VwLb);
+    this.Qouteform.get("qTotalvolumeKg")?.setValue(VwKg);
+
+    this.Qouteform.get("qTotalCubicFt")?.setValue(CFt);
+    this.Qouteform.get("qTotalCubicMtr")?.setValue(CMet);
+
+    this.Qouteform.get("qTotalActualLbs")?.setValue(AwLb);
+    this.Qouteform.get("qTotalActualKg")?.setValue(AwKg);
+
+    this.Qouteform.get("qTotalChargableWeightLbs")?.setValue(CwLb);
+    this.Qouteform.get("qTotalChargableWeightKg")?.setValue(CwKg);
+
+  }
+  chargescalculation() {
+    const chaArryV = this.Qouteform.getRawValue().qIservice;
+    let chatotal = 0;
+
+    chaArryV.forEach((x: any) => {
+
+      chatotal += Number(x.qcharges);
+
+    });
+
+
+    this.Qouteform.get("qTotalcharges")?.setValue(chatotal);
+  }
 
 
 

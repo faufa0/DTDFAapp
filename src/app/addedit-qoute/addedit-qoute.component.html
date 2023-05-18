@@ -13,27 +13,44 @@
                     </mat-form-field>
                     <mat-form-field appearance="outline" floatLabel="always">
                         <mat-label>Payment Terms</mat-label>
-                        <input matInput formControlName="qPaymentTerms">
+                        <mat-select formControlName="qPaymentTerms">
+                            <mat-option *ngFor="let paymentterm of paymentterms" [value]="paymentterm">
+                                {{paymentterm}}
+                            </mat-option>
+                        </mat-select>
                     </mat-form-field>
                 </div>
                 <div class="generalroutingrow">
-                    <mat-form-field appearance="outline" floatLabel="always">
-                        <mat-label>Date Created</mat-label>
-                        <input matInput formControlName="qDateCreated">
+                    <mat-form-field appearance="outline" floatLabel="always">                
+                        <mat-label>Date Created </mat-label>
+                    <input matInput [matDatepicker]="picker1" formControlName="qDateCreated">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
                     </mat-form-field>
                     <mat-form-field appearance="outline" floatLabel="always">
                         <mat-label>Expiration Date</mat-label>
-                        <input matInput formControlName="qExpirationDate">
+                        <mat-select formControlName="qExpirationDate">
+                            <mat-option *ngFor="let expdate of ExpirationDate" [value]="expdate">
+                                {{expdate}}
+                            </mat-option>
+                        </mat-select>
                     </mat-form-field>
                 </div>
                 <div class="generalroutingrow">
                     <mat-form-field appearance="outline" floatLabel="always">
                         <mat-label>Request Date</mat-label>
-                        <input matInput formControlName="qRequestDate">
+                        <input matInput [matDatepicker]="picker3" formControlName="qRequestDate">
+                        <mat-datepicker-toggle matIconSuffix [for]="picker3"></mat-datepicker-toggle>
+                        <mat-datepicker #picker3></mat-datepicker>
                     </mat-form-field>
                     <mat-form-field appearance="outline" floatLabel="always">
                         <mat-label>Source</mat-label>
-                        <input matInput formControlName="qSource">
+                        <input type="text" placeholder="" matInput [matAutocomplete]="auto" formControlName="qSource">
+                        <mat-autocomplete #auto="matAutocomplete">
+                            <mat-option *ngFor="let Sources of Source" [value]="Sources">
+                                {{Sources}}
+                            </mat-option>
+                        </mat-autocomplete>
                     </mat-form-field>
                 </div>
                 <div class="generalroutingrow">
@@ -70,21 +87,37 @@
                 <div class="generalroutingrow">
                     <mat-form-field appearance="outline" floatLabel="always">
                         <mat-label>Mode of Transportaion</mat-label>
-                        <input matInput formControlName="qModeofTransportaion">
+                        <mat-select formControlName="qModeofTransportaion">
+                            <mat-option *ngFor="let mots of Mot" [value]="mots">
+                                {{mots}}
+                            </mat-option>
+                        </mat-select>
                     </mat-form-field>
                     <mat-form-field appearance="outline" floatLabel="always">
                         <mat-label>Incoterms</mat-label>
-                        <input matInput formControlName="qIncoterms">
+                        <mat-select formControlName="qIncoterms">
+                            <mat-option *ngFor="let Incoterms of Incoterm" [value]="Incoterms">
+                                {{Incoterms}}
+                            </mat-option>
+                        </mat-select>
                     </mat-form-field>
                 </div>
                 <div class="generalroutingrow">
                     <mat-form-field appearance="outline" floatLabel="always">
                         <mat-label>Frequency</mat-label>
-                        <input matInput formControlName="qFrequency">
+                        <mat-select formControlName="qFrequency">
+                            <mat-option *ngFor="let Frequencys of Frequency" [value]="Frequencys">
+                                {{Frequencys}}
+                            </mat-option>
+                        </mat-select>
                     </mat-form-field>
                     <mat-form-field appearance="outline" floatLabel="always">
                         <mat-label>Service</mat-label>
-                        <input matInput formControlName="qService">
+                        <mat-select formControlName="qService">
+                            <mat-option *ngFor="let Services of Service" [value]="Services">
+                                {{Services}}
+                            </mat-option>
+                        </mat-select>
                     </mat-form-field>
                 </div>
                 <div class="generalroutingrow">
@@ -98,7 +131,6 @@
                     </mat-form-field>
                     <mat-form-field appearance="outline" floatLabel="always">
                         <mat-label>Destination Port</mat-label>
-
                         <mat-select formControlName="qDestinationPort">
                             <mat-option *ngFor="let Port of masterPort" [value]="Port.code">
                                 {{Port.name}}
@@ -156,7 +188,7 @@
                         <div class="generalroutingrow">
                             <mat-form-field class="numinput" appearance="outline" floatLabel="always">
                                 <mat-label>Pieces</mat-label>
-                                <input matInput formControlName="qPieces">
+                                <input matInput formControlName="qPieces" (change)="comoditiescalculation(i)">
                             </mat-form-field>
                             <mat-form-field class="textdp" appearance="outline" floatLabel="always">
                                 <mat-label>Package{{i+1}}</mat-label>
@@ -178,27 +210,35 @@
                             </mat-form-field>
                             <mat-form-field class="numinput" appearance="outline" floatLabel="always">
                                 <mat-label>Wgt</mat-label>
-                                <input matInput formControlName="qWeigth">
+                                <input matInput formControlName="qWeigth" (change)="comoditiescalculation(i)">
                             </mat-form-field>
                             <mat-form-field class="numinput" appearance="outline" floatLabel="always">
                                 <mat-label>Lb/kg</mat-label>
-                                <input matInput formControlName="qMetricoption">
+                                <mat-select formControlName="qMetricoption2"  (selectionChange)="comoditiescalculation(i)">
+                                    <mat-option *ngFor="let item of metricoption2" [value]="item.value">
+                                        {{item.viewValue}}
+                                    </mat-option>
+                                </mat-select>
                             </mat-form-field>
                             <mat-form-field class="numinput" appearance="outline" floatLabel="always">
                                 <mat-label>Length</mat-label>
-                                <input matInput formControlName="qLength">
+                                <input matInput formControlName="qLength" (change)="comoditiescalculation(i)">
                             </mat-form-field>
                             <mat-form-field class="numinput" appearance="outline" floatLabel="always">
                                 <mat-label>Width</mat-label>
-                                <input matInput formControlName="qWidth">
+                                <input matInput formControlName="qWidth" (change)="comoditiescalculation(i)">
                             </mat-form-field>
                             <mat-form-field class="numinput" appearance="outline" floatLabel="always">
                                 <mat-label>Height</mat-label>
-                                <input matInput formControlName="qHeight">
+                                <input matInput formControlName="qHeight" (change)="comoditiescalculation(i)">
                             </mat-form-field>
                             <mat-form-field class="numinput" appearance="outline" floatLabel="always">
                                 <mat-label>In/Cm</mat-label>
-                                <input matInput formControlName="qMetricoption2">
+                                <mat-select formControlName="qMetricoption" (selectionChange)="comoditiescalculation(i)" >
+                                    <mat-option *ngFor="let item of metricoption" [value]="item.value">
+                                        {{item.viewValue}}
+                                    </mat-option>
+                                </mat-select>
                             </mat-form-field>
                             <a mat-stroked-button color="warn">Delete</a>
                         </div>
@@ -272,7 +312,7 @@
                 <div class="totalcharges">
                     <mat-form-field appearance="outline" floatLabel="always">
                         <mat-label>Total</mat-label>
-                        <input matInput>
+                        <input matInput  formControlName="qTotalcharges">
                     </mat-form-field>
                 </div>
 
