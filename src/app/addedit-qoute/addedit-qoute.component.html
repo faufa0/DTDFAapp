@@ -43,7 +43,12 @@
                     </mat-form-field>
                     <mat-form-field appearance="outline" floatLabel="always">
                         <mat-label>Empoloyee</mat-label>
-                        <input matInput formControlName="qEmpoloyee">
+
+                        <mat-select formControlName="qEmpoloyee">
+                            <mat-option *ngFor="let Empoloyee of masterEmployee" [value]="Empoloyee.name">
+                                {{Empoloyee.name}}
+                            </mat-option>
+                        </mat-select>
                     </mat-form-field>
                 </div>
                 <div class="generalroutingrow">
@@ -85,21 +90,39 @@
                 <div class="generalroutingrow">
                     <mat-form-field appearance="outline" floatLabel="always">
                         <mat-label>Origin Port</mat-label>
-                        <input matInput formControlName="qOriginPort">
+                        <mat-select formControlName="qOriginPort">
+                            <mat-option *ngFor="let Port of masterPort" [value]="Port.code">
+                                {{Port.name}}
+                            </mat-option>
+                        </mat-select>
                     </mat-form-field>
                     <mat-form-field appearance="outline" floatLabel="always">
                         <mat-label>Destination Port</mat-label>
-                        <input matInput formControlName="qDestinationPort">
+
+                        <mat-select formControlName="qDestinationPort">
+                            <mat-option *ngFor="let Port of masterPort" [value]="Port.code">
+                                {{Port.name}}
+                            </mat-option>
+                        </mat-select>
                     </mat-form-field>
                 </div>
                 <div class="generalroutingrow">
                     <mat-form-field appearance="outline" floatLabel="always">
                         <mat-label>Shipper</mat-label>
-                        <input matInput formControlName="qShipper">
+                        <mat-select formControlName="qShipperno" (selectionChange)="shipperchange()">
+                            <mat-option *ngFor="let client of masterClient" [value]="client.id">
+                                {{client.name}}
+                            </mat-option>
+                        </mat-select>
                     </mat-form-field>
                     <mat-form-field appearance="outline" floatLabel="always">
                         <mat-label>Consignee</mat-label>
-                        <input matInput formControlName="qConsignee">
+                        <mat-select formControlName="qConsigneeno" (selectionChange)="consigneechange()">
+                            <mat-option *ngFor="let client of masterClient" [value]="client.id">
+                                {{client.name}}
+                            </mat-option>
+                        </mat-select>
+
                     </mat-form-field>
                 </div>
                 <div class="generalroutingrow">
@@ -123,102 +146,128 @@
         </mat-tab>
         <mat-tab label="Charges">
             <div class="tabcontent">
-                <div class="generalroutingrow">
-                    <a mat-raised-button color="primary">Add Commodities</a>
+                <div formArrayName="qICommodities">
+
+                    <div class="generalroutingrow">
+                        <a mat-raised-button type="submit" color="primary" (click)="addnewCommodities()">Add
+                            Commodities</a>
+                    </div>
+                    <div *ngFor="let item of Hcommodities.controls;let i=index" [formGroupName]="i">
+                        <div class="generalroutingrow">
+                            <mat-form-field class="numinput" appearance="outline" floatLabel="always">
+                                <mat-label>Pieces</mat-label>
+                                <input matInput formControlName="qPieces">
+                            </mat-form-field>
+                            <mat-form-field class="textdp" appearance="outline" floatLabel="always">
+                                <mat-label>Package{{i+1}}</mat-label>
+                              
+                                <mat-select formControlName="qPackage">
+                                    <mat-option *ngFor="let Commodities of masterCommodities" [value]="Commodities.package">
+                                        {{Commodities.package}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-form-field class="textdp" appearance="outline" floatLabel="always">
+                                <mat-label>Discription</mat-label>
+                              
+                                <mat-select formControlName="qDescription">
+                                    <mat-option *ngFor="let Commodities of masterCommodities" [value]="Commodities.discriptions">
+                                        {{Commodities.discriptions}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-form-field class="numinput" appearance="outline" floatLabel="always">
+                                <mat-label>Wgt</mat-label>
+                                <input matInput formControlName="qWeigth">
+                            </mat-form-field>
+                            <mat-form-field class="numinput" appearance="outline" floatLabel="always">
+                                <mat-label>Lb/kg</mat-label>
+                                <input matInput formControlName="qMetricoption">
+                            </mat-form-field>
+                            <mat-form-field class="numinput" appearance="outline" floatLabel="always">
+                                <mat-label>Length</mat-label>
+                                <input matInput formControlName="qLength">
+                            </mat-form-field>
+                            <mat-form-field class="numinput" appearance="outline" floatLabel="always">
+                                <mat-label>Width</mat-label>
+                                <input matInput formControlName="qWidth">
+                            </mat-form-field>
+                            <mat-form-field class="numinput" appearance="outline" floatLabel="always">
+                                <mat-label>Height</mat-label>
+                                <input matInput formControlName="qHeight">
+                            </mat-form-field>
+                            <mat-form-field class="numinput" appearance="outline" floatLabel="always">
+                                <mat-label>In/Cm</mat-label>
+                                <input matInput formControlName="qMetricoption2">
+                            </mat-form-field>
+                            <a mat-stroked-button color="warn">Delete</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="generalroutingrow" formArrayName="qICommodities">
-                    <mat-form-field class="numinput" appearance="outline" floatLabel="always">
-                        <mat-label>Pieces</mat-label>
-                        <input matInput>
-                    </mat-form-field>
-                    <mat-form-field class="textdp" appearance="outline" floatLabel="always">
-                        <mat-label>Package</mat-label>
-                        <input matInput>
-                    </mat-form-field>
-                    <mat-form-field class="textdp" appearance="outline" floatLabel="always">
-                        <mat-label>Discription</mat-label>
-                        <input matInput>
-                    </mat-form-field>
-                    <mat-form-field class="numinput" appearance="outline" floatLabel="always">
-                        <mat-label>Wgt</mat-label>
-                        <input matInput>
-                    </mat-form-field>
-                    <mat-form-field class="numinput" appearance="outline" floatLabel="always">
-                        <mat-label>Lb/kg</mat-label>
-                        <input matInput>
-                    </mat-form-field>
-                    <mat-form-field class="numinput" appearance="outline" floatLabel="always">
-                        <mat-label>Length</mat-label>
-                        <input matInput>
-                    </mat-form-field>
-                    <mat-form-field class="numinput" appearance="outline" floatLabel="always">
-                        <mat-label>Width</mat-label>
-                        <input matInput>
-                    </mat-form-field>
-                    <mat-form-field class="numinput" appearance="outline" floatLabel="always">
-                        <mat-label>Height</mat-label>
-                        <input matInput>
-                    </mat-form-field>
-                    <mat-form-field class="numinput" appearance="outline" floatLabel="always">
-                        <mat-label>In/Cm</mat-label>
-                        <input matInput>
-                    </mat-form-field>
-                    <button mat-stroked-button color="warn">Delete</button>
-                </div>
+
                 <div class="comrottotal">
                     <mat-form-field appearance="outline" floatLabel="always">
                         <mat-label>Actual Weigth (Lbs)</mat-label>
-                        <input matInput>
+                        <input matInput formControlName="qTotalActualLbs">
                     </mat-form-field>
                     <mat-form-field appearance="outline" floatLabel="always">
                         <mat-label>Volume Weight (Lbs)</mat-label>
-                        <input matInput>
+                        <input matInput formControlName="qTotalvolumeLbs">
                     </mat-form-field>
                     <mat-form-field appearance="outline" floatLabel="always">
                         <mat-label>Cubic (Ft)</mat-label>
-                        <input matInput>
+                        <input matInput formControlName="qTotalCubicFt">
                     </mat-form-field>
                     <mat-form-field appearance="outline" floatLabel="always">
                         <mat-label>Chargable Weight (Lbs)</mat-label>
-                        <input matInput>
+                        <input matInput formControlName="qTotalChargableWeightLbs">
                     </mat-form-field>
                 </div>
                 <div class="comrottotal">
                     <mat-form-field appearance="outline" floatLabel="always">
                         <mat-label>Actual Weigth (Kg)</mat-label>
-                        <input matInput>
+                        <input matInput formControlName="qTotalActualKg">
                     </mat-form-field>
                     <mat-form-field appearance="outline" floatLabel="always">
                         <mat-label>Volume Weight (Kg)</mat-label>
-                        <input matInput>
+                        <input matInput formControlName="qTotalvolumeKg">
                     </mat-form-field>
                     <mat-form-field appearance="outline" floatLabel="always">
                         <mat-label>Cubic (Mtr)</mat-label>
-                        <input matInput>
+                        <input matInput formControlName="qTotalCubicMtr">
                     </mat-form-field>
                     <mat-form-field appearance="outline" floatLabel="always">
                         <mat-label>Chargable Weight (Kg)</mat-label>
-                        <input matInput>
-                    </mat-form-field>
+                        <input matInput formControlName="qTotalChargableWeightKg">
+                    </mat-form-field >
                 </div>
             </div>
             <div class="tabcontent">
-                <div class="generalroutingrow">
-                    <a mat-raised-button color="primary">Add Service</a>
-                </div>
-                <div class="generalroutingrow" formArrayName="qIcharges">
+                <div formArrayName="qIservice">
+                    <div class="generalroutingrow">
+                        <a mat-raised-button color="primary" (click)="addnewService()">Add Service</a>
+                    </div>
 
-                    <mat-form-field appearance="outline" floatLabel="always">
-                        <mat-label>Charges</mat-label>
-                        <input matInput>
-                    </mat-form-field>
-                    <mat-form-field appearance="outline" floatLabel="always">
-                        <mat-label>Service</mat-label>
-                        <input matInput>
-                    </mat-form-field>
+                    <div *ngFor="let item of Hservice.controls;let i=index" [formGroupName]="i"
+                        class="generalroutingrow">
 
-                    <a mat-stroked-button color="warn">Delete</a>
+                        <mat-form-field appearance="outline" floatLabel="always">
+                            <mat-label>Charges</mat-label>
+                            <input matInput formControlName="qcharges" >
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" floatLabel="always">
+                            <mat-label>Service </mat-label>
+                           
+                            <mat-select formControlName="qserviceid" (selectionChange)="servicechange(i)">
+                                <mat-option *ngFor="let Charges of masterCharges" [value]="Charges.id">
+                                    {{Charges.service}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
 
+                        <a mat-stroked-button color="warn">Delete</a>
+
+                    </div>
                 </div>
                 <div class="totalcharges">
                     <mat-form-field appearance="outline" floatLabel="always">

@@ -4,112 +4,155 @@
       "email": "cwg email",
       "adress": "cwg Adress1",
       "name": "CARPENTERS WORKSHOP GALLERY",
-      "id": 1
+      "clientno": "C01",
+      "id":1
     },
     {
       "email": "mfs email",
       "adress": "mfs Adress1",
-      "name": "MERIDIAN FREIGHT SERVICES LTD",
-      "id": 2
+      "name": "MERIDIANFREIGHTSERVICESLTD",
+      "clientno": "C02",
+      "id":2
     },
     {
       "email": "kgc email",
       "adress": "kgc Adress1",
       "name": "KAYNE GRIFFIN CORPORATION",
-      "id": 3
+      "clientno": "C03",
+      "id":3
     },
     {
       "email": "bn email",
       "adress": "bn Adress1",
       "name": "BONHAMS NY",
+      "clientno": "C04",
       "id": 4
     },
     {
       "email": "cfa email",
       "adress": "cfa Adress1",
-      "name": "CROWN FINE ART- MIDDLE EAST",
-      "id": 5
+      "name": "CROWN FINE ART MIDDLE EAST",
+      "clientno": "C05",
+      "id":5
     },
+  
     {
       "email": "c email",
       "adress": "c Adress1",
-      "name": "CHRISTIE'S",
-      "id": 6
+      "name": "CHRISTIES'S",
+      "clientno": "C06",
+      "id":6
     },
     {
       "email": "AWT email",
       "adress": "AWT Adress1",
       "name": "ARTS WANTED LIMITED",
-      "id": 7
+      "clientno": "C07",
+      "id":7
     }
 
   ],
   "employeeDb": [
     {
       "name": "Mark Boyea",
-      "id": 1
+      "email": "Mark@email.com",
+      "isactive": true,
+      "password":"12345",
+      "role":"Admin",
+      "employeeno": "E01"
     },
     {
       "name": "Lorraine Legisniana",
-      "id": 2
+      "email": "Lorraine@email.com",
+      "isactive": true,
+      "password":"12345",
+      "role":"Qoute",
+      "employeeno": "E02"
     },
     {
       "name": "David Bautista",
-      "id": 3
+       "email": "David@email.com",
+      "isactive": true,
+      "password":"12345",
+      "role":"Import",
+      "employeeno": "E03"
     },
     {
       "name": "Azalie Cartas",
-      "id": 4
+       "email": "Azalie@email.com",
+      "isactive": true,
+      "password":"12345",
+      "role":"Export",
+      "employeeno": "E04"
     },
     {
       "name": "Vince Serrano",
-      "id": 5
+       "email": "Vince@email.com",
+      "isactive": true,
+      "password":"12345",
+      "role":"Export",
+      "employeeno": "E05"
     },
     {
       "name": "Gladys Aguirre",
-      "id": 6
+       "email": "Gladys@email.com",
+      "isactive": true,
+      "password":"12345",
+      "role":"Accounting",
+      "employeeno": "E06"
     },
     {
       "name": "Adrienne Bishop",
-      "id": 7
+       "email": "Adrienne@email.com",
+      "isactive": true,
+      "password":"12345",
+      "role":"Import",
+      "employeeno": "E07"
     }
   ],
   "portDb": [
     {
-      "name": "JFK",
+      "name": "John F. Kennedy Airport",
+      "code": "JFK",
       "id": 1
     },
     {
-      "name": "EWR",
+      "name": "Newark Liberty International Airport",
+      "code": "EWR",
       "id": 2
     },
     {
-      "name": "MIA",
+      "name": "Miami Airport",
+      "code": "MIA",
       "id": 3
     },
     {
-      "name": "LAX",
+      "name": "Los Angeles International Airport",
+      "code": "LAX",
       "id": 4
     },
     {
-      "name": "BOS",
+      "name": "Boston Airport ",
+      "code": "BOS",
       "id": 5
     },
     {
-      "name": "DEN",
+      "name": "Denver Airport",
+      "code": "DEN",
       "id": 6
     },
     {
-      "name": "LAS",
+      "name": "LAS Port",
+      "code": "LAS",
       "id": 7
     }
   ],
   "chargesDb": [
     {
-      "service": "2 Man Delievery",
-      "charges": 100,
+      "id": 1,
       "function": "Domestic",
-      "id": 1
+      "service": "2 Man Delievery",
+      "charges": 100            
     },
     {
       "id": 2,
@@ -157,23 +200,28 @@
   "commoditiesDb": [
     {
       "id": 1,
-      "name": "Artworks"
+      "package": "Crate",
+      "discriptions": "Artworks"
     },
     {
       "id": 2,
-      "name": "Exhibition Goods"
+      "package": "Soft-packed",
+      "discriptions": "Engine Parts"
     },
     {
       "id": 3,
-      "name": "Paintings"
+      "package": "Case",
+      "discriptions": "Painting"
     },
     {
       "id": 4,
-      "name": "Enginie Parts"
+      "package": "Container",
+      "discriptions": "Artworks"
     },
     {
       "id": 5,
-      "name": "Furnitures"
+      "package": "Tube",
+      "discriptions": "Sculpture"
     }
   ],
   "qouteDb": [
